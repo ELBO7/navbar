@@ -17,17 +17,27 @@ nav{
     height: 10vh;
     width: 100%;
     top: 0;
-    box-shadow:  0em 0.4rem 0.4px rgba(0, 0, 0, 0.425);
+    position: -webkit-sticky;
+    position: sticky;
+    box-shadow:  1px 10px 14px rgba(0, 0, 0, 0.308);
 }
 
-label.logo{
+label.logo .head{
+    cursor: pointer;
     color: white;
-    font-size: 1.5em;
+    font-size: 2em;
     line-height: 10vh;
-    padding: 0 100px;
+    padding: 0 3em;
     font-weight: bold;
     font-family: 'Akaya Telivigala', cursive;
 }
+
+
+label.logo .head:hover{
+    color: #2c3e50;
+    background: none;
+}
+
 
 nav ul{
     float: right;
@@ -63,7 +73,20 @@ a.active, a:hover{
     cursor: pointer;
     display: none;
 }
+.btnback{
+    font-size: 2em;
+    float: right;
+    line-height: 10vh;
+    margin-right: 1.5em;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
 
+.btnback:hover{
+    color: #1b9bff;
+    transition: all 400ms ;
+}
 
 .btnmenu:hover{
     color: #001b30d5;
@@ -81,11 +104,9 @@ a.active, a:hover{
 
 main{
     background-color: burlywood;
-    height: calc( 100vh - 10vh);
-    padding: 3em;
-    overflow-y: scroll;
-    width: 100vw;
-    border-top: 5px solid rgba(0, 0, 0, 0.192);
+    height: calc( 100% - 10vh);
+    padding: 2em;
+    width: 100%;
 }
 
 
@@ -100,6 +121,16 @@ main{
 }
 
 @media (max-width: 789px) {
+    label.logo .head{
+        font-size: 1.5em;
+        padding-left: 0em;
+        position: absolute;
+        left: 0.7em;
+    }
+    .btnback{
+        display: block;
+    }
+
     .btnmenu{
         display: block;
     }
@@ -129,6 +160,7 @@ main{
     #check:checked ~ ul{
         border-top: 4px solid rgba(0, 0, 0, 0.26);
         left: 0;
+        top: 0;
         transition:  100ms;
     }
 }
